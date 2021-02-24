@@ -18,28 +18,26 @@ class BodyMassIndex:
     get_bmi_category: discerns the bmi category from the body mass index
     """
 
-    def __init__(self):
-        """For use with testing. Initializes a blank BodyMassIndex object."""
-        self.weight = None
-        self.height = None
-
-    def __init__(self, height, weight):
+    def __init__(self, weight=None, height=None):
         """Creates an instance of a BodyMassIndex object.
         :param height: height in inches
         :type height: float
         :param weight: weight in pounds
         :type weight: float
         """
-        if 0 <= weight < 900:
-            raise(ValueError("Weight must be greater than 0 and less than or equal to 900 pounds."))
-        if 0 <= height < 108:
-            # 108 is 9' in inches
-            raise(ValueError("Height must be greater than 0 and less than or equal to 108 inches."))
+        if weight is not None and height is not None:
+            if type(weight) != float or type(height) != float:
+                raise (TypeError("Weight and height must be floating point integers."))
+            if weight <= 0 or weight > 900:
+                raise (ValueError("Weight must be greater than 0 and less than or equal to 900 pounds."))
+            if height <= 0 or height > 108:
+                # 108 is 9' in inches
+                raise (ValueError("Height must be greater than 0 and less than or equal to 108 inches."))
 
-        self.weight = weight
-        self.height = height
+            self.weight = weight
+            self.height = height
 
-        self.bmi_value = self.calculate_body_mass_index
+            self.bmi_value = self.calculate_body_mass_index
 
     def calculate_body_mass_index(self):
         pass
@@ -57,9 +55,10 @@ class BodyMassIndex:
         pass
 
     def __eq__(self, other):
+        """Equivalency check override"""
         if type(self) != type(other):
             return False
         else:
-            if self.weight != other.weight || self.height != other.height:
+            if self.weight != other.weight or self.height != other.height:
                 return False
             return True

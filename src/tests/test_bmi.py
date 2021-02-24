@@ -6,25 +6,84 @@ import unittest
 from ..classes.bodymassindex import BodyMassIndex
 
 
-class TestBMI(unittest.TestCase):
+class TestBMIInit(unittest.TestCase):
     def setUp(self):
         """Setup function that will apply to all other test functions in the class."""
         self.control_bmi_object = BodyMassIndex()
         self.control_bmi_object.height = 63.0
         self.control_bmi_object.weight = 125.0
 
-    def test_bmi_init(self):
-        """Tests initializing a BodyMassIndex class object"""
+    def test_bmi_weight_init(self):
+        """Tests initializing a BodyMassIndex object with varying weights."""
+
+        # Case: Weight of 0
+        # expected: ValueError
         with self.assertRaises(ValueError) as context:
-            self.bmi_object = BodyMassIndex(0, 125)
+            self.bmi_object = BodyMassIndex(0.0, 63.0)
+        self.assertEqual(str(context.exception),
+                         "Weight must be greater than 0 and less than or equal to 900 pounds.")
 
-        self.bmi_object = BodyMassIndex(63, 125)
+        # Case: Weight of 900 (boundary)
+        # expected: ValueError
+        with self.assertRaises(ValueError) as context:
+            self.bmi_object = BodyMassIndex(901.0, 63.0)
+        self.assertEqual(str(context.exception),
+                         "Weight must be greater than 0 and less than or equal to 900 pounds.")
 
+        # Case: Weight of 1000
+        # expected: ValueError
+        with self.assertRaises(ValueError) as context:
+            self.bmi_object = BodyMassIndex(1000.0, 63.0)
+        self.assertEqual(str(context.exception),
+                         "Weight must be greater than 0 and less than or equal to 900 pounds.")
+
+        self.bmi_object = BodyMassIndex(125.0, 63.0)
+
+    def test_bmi_init_height(self):
+        """Tests initializing a BodyMassIndex object with varying heights."""
+        # Case: Height of 0
+        # expected: ValueError
+        with self.assertRaises(ValueError) as context:
+            self.bmi_object = BodyMassIndex(125.0, 0.0)
+        self.assertEqual(str(context.exception),
+                         "Height must be greater than 0 and less than or equal to 108 inches.")
+
+        # Case: Height of 108 (boundary)
+        # expected: ValueError
+        with self.assertRaises(ValueError) as context:
+            self.bmi_object = BodyMassIndex(125.0, 109.0)
+        self.assertEqual(str(context.exception),
+                         "Height must be greater than 0 and less than or equal to 108 inches.")
+
+        # Case: Height of 200
+        # expected: ValueError
+        with self.assertRaises(ValueError) as context:
+            self.bmi_object = BodyMassIndex(125.0, 0.0)
+        self.assertEqual(str(context.exception),
+                         "Height must be greater than 0 and less than or equal to 108 inches.")
+
+        self.bmi_object = BodyMassIndex(125.0, 63.0)
+
+    def test_bmi_init_validity(self):
+        """Tests to ensure that a BodyMassIndex object initiated with control variables passed as arguments match up
+        with control BodyMassIndex object.
+        """
+        self.bmi_object = BodyMassIndex(125.0, 63.0)
+
+        self.assertEqual(self.bmi_object, self.control_bmi_object)
+
+    def test_bmi_accessors(self):
+        """Tests the accessors provided by the BodyMassIndex class."""
+        pass
 
     def test_bmi_value_calculation(self):
-        """Tests the calculation of a bmi value with the BodyMassIndex class object"""
+        """Tests the calculation of a bmi value with the BodyMassIndex object."""
         pass
 
     def test_bmi_category_calculation(self):
-        """Tests initializing a BodyMassIndex class object"""
+        """Tests the bmi category validity of a BodyMassIndex object."""
         pass
+
+
+if __name__ == '__main__':
+    unittest.main()
