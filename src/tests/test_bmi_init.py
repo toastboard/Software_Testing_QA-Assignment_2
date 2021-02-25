@@ -3,6 +3,7 @@
 
 # Tests the BMI functionality of the program using the accessors and modifiers of the BodyMassIndex Python class.
 import unittest
+from ..classes.bmi_categories import BodyMassIndexCategory
 from ..classes.bodymassindex import BodyMassIndex
 
 
@@ -13,6 +14,10 @@ class TestBMIInit(unittest.TestCase):
         self.control_bmi_weight = 125.0
         # Height that must be valid
         self.control_bmi_height = 63.0
+        # The known value for the bmi value given the above weight and height
+        self.control_bmi_value = 22.7
+        # The known value for the bmi category given the above weight and height
+        self.control_bmi_category = BodyMassIndexCategory.NORMAL_WEIGHT
 
         # BodyMassIndex object that must be valid
         self.control_bmi_object = BodyMassIndex()
@@ -44,11 +49,14 @@ class TestBMIInit(unittest.TestCase):
                          "Weight must be greater than 0 and less than or equal to 900 pounds.")
 
         # Case: Weight of invalid type (str)
+        # expected: TypeError
         with self.assertRaises(TypeError) as context:
             self.bmi_object = BodyMassIndex("test", self.control_bmi_height)
         self.assertEqual(str(context.exception),
                          "Weight and height must be floating point integers.")
 
+        # Case: Valid Weight
+        # expected: Pass
         self.bmi_object = BodyMassIndex(self.control_bmi_weight, self.control_bmi_height)
 
     def test_bmi_init_height(self):
@@ -75,32 +83,32 @@ class TestBMIInit(unittest.TestCase):
                          "Height must be greater than 0 and less than or equal to 108 inches.")
 
         # Case: Height of invalid type (str)
+        # expected: TypeError
         with self.assertRaises(TypeError) as context:
             self.bmi_object = BodyMassIndex(self.control_bmi_weight, "test")
         self.assertEqual(str(context.exception),
                          "Weight and height must be floating point integers.")
 
+        # Case: Valid Weight
+        # expected: Pass
         self.bmi_object = BodyMassIndex(self.control_bmi_weight, self.control_bmi_height)
 
     def test_bmi_init_validity(self):
         """Tests to ensure that a BodyMassIndex object initiated with control variables passed as arguments match up
         with control BodyMassIndex object.
         """
+        # Case: Initialize object, compare to control case.
+        # expected: pass
         self.bmi_object = BodyMassIndex(self.control_bmi_weight, self.control_bmi_height)
 
         self.assertEqual(self.bmi_object, self.control_bmi_object)
 
     def test_bmi_accessors(self):
         """Tests the accessors provided by the BodyMassIndex class."""
-        pass
-
-    def test_bmi_value_calculation(self):
-        """Tests the calculation of a bmi value with the BodyMassIndex object."""
-        pass
-
-    def test_bmi_category_calculation(self):
-        """Tests the bmi category validity of a BodyMassIndex object."""
-        pass
+        self.assertEqual(self.control_bmi_height, self.control_bmi_object.get_height())
+        self.assertEqual(self.control_bmi_weight, self.control_bmi_object.get_weight())
+        self.assertAlmostEqual(self.control_bmi_value, self.control_bmi_object.get_bmi_value())
+        self.assertEqual(self.control_bmi_category, self.control_bmi_object.get_bmi_category())
 
 
 if __name__ == '__main__':
