@@ -13,10 +13,10 @@ class TestBMICalculations(unittest.TestCase):
         Each weight will change per case and the expected value and category for each case are set up beforehand.
         """
         # A height that will be used for all test cases in order to have a uniform test spread.
-        self.control_height = 63
+        self.control_height = 63.0
 
         # Values representing an obese BMI category.
-        self.obese_weight = 190
+        self.obese_weight = 190.0
         self.obese_value = 34.5
         self.obese_category = BodyMassIndexCategory.OBESE
 
@@ -26,7 +26,7 @@ class TestBMICalculations(unittest.TestCase):
         self.overweight_obese_category = BodyMassIndexCategory.OBESE
 
         # Values representing an overweight BMI category
-        self.overweight_weight = 150
+        self.overweight_weight = 150.0
         self.overweight_value = 27.2
         self.overweight_category = BodyMassIndexCategory.OVER_WEIGHT
 
@@ -36,7 +36,7 @@ class TestBMICalculations(unittest.TestCase):
         self.normal_overweight_category = BodyMassIndexCategory.OVER_WEIGHT
 
         # Values representing a normal BMI category
-        self.normal_weight = 120
+        self.normal_weight = 120.0
         self.normal_value = 21.8
         self.normal_category = BodyMassIndexCategory.NORMAL_WEIGHT
 
@@ -46,7 +46,7 @@ class TestBMICalculations(unittest.TestCase):
         self.underweight_normal_category = BodyMassIndexCategory.NORMAL_WEIGHT
 
         # Values representing an underweight BMI category
-        self.underweight_weight = 90
+        self.underweight_weight = 90.0
         self.underweight_value = 16.3
         self.underweight_category = BodyMassIndexCategory.UNDERWEIGHT
 

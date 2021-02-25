@@ -23,6 +23,7 @@ class TestBMIInit(unittest.TestCase):
         self.control_bmi_object = BodyMassIndex()
         self.control_bmi_object.weight = self.control_bmi_weight
         self.control_bmi_object.height = self.control_bmi_height
+        self.control_bmi_object.calculate_body_mass_index()
 
     def test_bmi_weight_init(self):
         """Tests initializing a BodyMassIndex object with varying weights."""
