@@ -26,10 +26,18 @@ class RetirementCalculator:
         :param spy: savings percentage per year
         :param goal: goal for savings in USD
         """
+        if not 0 <= age < 100:
+            raise ValueError("Age must be no less than 0 and no greater than 99 years.")
+        if not 0 < salary <= 500000:
+            raise ValueError("Salary must be greater than 0 and no greater than 500,000 USD.")
+        if not 0 < spy < 1:
+            raise ValueError("Savings per year must be greater than 0 and less than 1.")
+        if not 0 < goal <= 2000000:
+            raise ValueError("Savings goal must be greater than 0 and no greater than 2,000,000 USD.")
         self.age = age
         self.salary = salary
-        self.goal = goal
         self.spy = spy
+        self.goal = goal
 
     def calculate_savings_age(self):
         pass
