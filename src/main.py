@@ -1,7 +1,7 @@
 # CJ Nguyen
 # 2/23/2021
-from src.classes.bodymassindex import BodyMassIndex, BodyMassIndexCategory
-from src.classes.retirement import RetirementCalculator
+from classes.bodymassindex import BodyMassIndex, BodyMassIndexCategory
+from classes.retirement import RetirementCalculator
 
 
 def retirement_calculator():
