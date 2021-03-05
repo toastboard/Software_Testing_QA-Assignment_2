@@ -39,8 +39,8 @@ class BodyMassIndex:
         """
         if weight is not None and height is not None:
             try:
-                float(weight)
-                float(height)
+                weight = float(weight)
+                height = float(height)
             except ValueError:
                 raise (TypeError("Weight and height must be floating point integers."))
             if weight <= 0 or weight > 900:
