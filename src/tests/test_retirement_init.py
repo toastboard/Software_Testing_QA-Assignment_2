@@ -227,6 +227,26 @@ class TestRetirementInit(unittest.TestCase):
             self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
                                                               "test")
 
+    def test_getters(self):
+        """Tests the getters of the RetirementCalculator class"""
+        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings, self.control_goal)
+
+        # Case: Age
+        # expected: 30
+        self.assertEqual(self.control_age, self.retirement_calculator.get_age())
+
+        # Case: Salary
+        # expected: 80,000
+        self.assertEqual(self.control_salary, self.retirement_calculator.get_salary())
+
+        # Case: Percent Saved per Year
+        # expected: 0.12
+        self.assertEqual(self.control_percent_savings, self.retirement_calculator.get_percent_savings())
+
+        # Case: Goal
+        # expected: 700,000
+        self.assertEqual(self.control_goal, self.retirement_calculator.get_goal())
+
 
 if __name__ == '__main__':
     unittest.main()

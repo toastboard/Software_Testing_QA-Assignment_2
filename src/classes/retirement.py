@@ -68,3 +68,19 @@ class RetirementCalculator:
             return False
         else:
             return True
+
+    def get_age(self):
+        """Returns age attribute"""
+        return self.age
+
+    def get_salary(self):
+        """Returns age attribute"""
+        return self.salary
+
+    def get_percent_savings(self):
+        """Returns percent saved per year attribute"""
+        return self.percent_savings
+
+    def get_goal(self):
+        """Returns goal attribute"""
+        return self.goal
