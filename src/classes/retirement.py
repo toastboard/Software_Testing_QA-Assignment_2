@@ -31,10 +31,10 @@ class RetirementCalculator:
         :param goal: goal for savings in USD
         """
         try:
-            int(age)
-            int(salary)
-            float(percent_savings)
-            int(goal)
+            age = int(age)
+            salary = int(salary)
+            percent_savings = float(percent_savings)
+            goal = int(goal)
         except ValueError:
             raise TypeError("Input was of incorrect type")
         if not 0 <= age < 100:
