@@ -17,11 +17,11 @@ def retirement_calculator():
 
             retirement_calc = RetirementCalculator(user_age, user_salary, user_percent_savings, user_goal)
         except ValueError as e:
-            print("ERROR: " + str(e))
+            print("\nERROR: " + str(e))
             print("")
             continue
         except TypeError as e:
-            print("ERROR: " + str(e))
+            print("\nERROR: " + str(e))
             print("")
             continue
         except:
@@ -80,11 +80,11 @@ def bmi():
 
             bmi_object = BodyMassIndex(user_weight, user_height)
         except ValueError as e:
-            print("ERROR: " + str(e))
+            print("\nERROR: " + str(e))
             print("")
             continue
         except TypeError as e:
-            print("ERROR: " + str(e))
+            print("\nERROR: " + str(e))
             print("")
             continue
         except:
@@ -153,7 +153,7 @@ def main():
         elif user_choice == "exit":
             return 1
         else:
-            print("\nERROR: Invalid choice made. Please enter one of three options - retirement, bmi, or exit.\n")
+            print("ERROR: Invalid choice made. Please enter one of three options - retirement, bmi, or exit.\n")
     return 1
 
 
