@@ -1,4 +1,5 @@
 import unittest
+
 from src.classes.bmi_categories import BodyMassIndexCategory
 from src.classes.bodymassindex import BodyMassIndex
 
@@ -11,6 +12,10 @@ class TestBMICalculations(unittest.TestCase):
 
         The height values will be kept consistently at 63.
         Each weight will change per case and the expected value and category for each case are set up beforehand.
+
+        NOTE: This is essentially a one-dimensional test with the weight being the only thing that changes.
+        This was decided upon given the characteristics of the equation, where verifying values of one dimension
+        correlate to the other dimension also having successful results.
         """
         # A height that will be used for all test cases in order to have a uniform test spread.
         self.control_height = 63.0
@@ -77,21 +82,21 @@ class TestBMICalculations(unittest.TestCase):
 
         self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.normal_overweight_value)
         self.assertEqual(self.bmi_object.get_bmi_category(), self.normal_overweight_category)
-        
+
     def test_bmi_normal(self):
         """Tests the normal values case"""
         self.bmi_object = BodyMassIndex(self.normal_weight, self.control_height)
 
         self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.normal_value)
         self.assertEqual(self.bmi_object.get_bmi_category(), self.normal_category)
-        
+
     def test_bmi_underweight_normal_edge(self):
         """Tests the underweight-normal value edge case"""
         self.bmi_object = BodyMassIndex(self.underweight_normal_weight, self.control_height)
 
         self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.underweight_normal_value)
         self.assertEqual(self.bmi_object.get_bmi_category(), self.underweight_normal_category)
-        
+
     def test_bmi_underweight(self):
         """Tests the underweight values case"""
         self.bmi_object = BodyMassIndex(self.underweight_weight, self.control_height)

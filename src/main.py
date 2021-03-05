@@ -135,6 +135,7 @@ def bmi():
             else:
                 print("\nERROR: Invalid entry, choose a number from 1-5.\n")
 
+
 def tests():
     pass
 

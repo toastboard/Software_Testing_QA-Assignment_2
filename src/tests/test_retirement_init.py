@@ -43,7 +43,8 @@ class TestRetirementInit(unittest.TestCase):
 
         # Case: Age is 30 (control)
         # expected: pass
-        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                          self.control_percent_savings,
                                                           self.control_goal)
 
         # Case: Age is 99 (boundary)
@@ -88,7 +89,8 @@ class TestRetirementInit(unittest.TestCase):
 
         # Case: Salary is 80000 (control)
         # expected: pass
-        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                          self.control_percent_savings,
                                                           self.control_goal)
 
         # Case: Salary is 500000 (boundary)
@@ -133,7 +135,8 @@ class TestRetirementInit(unittest.TestCase):
 
         # Case: Savings per year is 0.12 (control)
         # expected: pass
-        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                          self.control_percent_savings,
                                                           self.control_goal)
 
         # Case: Savings per year is 0.99
@@ -160,7 +163,8 @@ class TestRetirementInit(unittest.TestCase):
         # Case: Goal is -1000
         # expected: ValueError
         with self.assertRaises(ValueError) as context:
-            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                              self.control_percent_savings,
                                                               -1000)
         self.assertEqual(str(context.exception),
                          "Savings goal must be greater than 0 and no greater than 2,000,000 USD.")
@@ -168,30 +172,35 @@ class TestRetirementInit(unittest.TestCase):
         # Case: Goal is 0
         # expected: ValueError
         with self.assertRaises(ValueError) as context:
-            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                              self.control_percent_savings,
                                                               0)
         self.assertEqual(str(context.exception),
                          "Savings goal must be greater than 0 and no greater than 2,000,000 USD.")
 
         # Case: Goal is 1 (boundary)
         # expected: pass
-        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                          self.control_percent_savings,
                                                           1)
 
         # Case: Goal is 700000 (control)
         # expected: pass
-        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                          self.control_percent_savings,
                                                           self.control_goal)
 
         # Case: Goal is 2000000 (boundary)
         # expected: pass
-        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                          self.control_percent_savings,
                                                           2000000)
 
         # Case: Goal is 2000001
         # expected: ValueError
         with self.assertRaises(ValueError) as context:
-            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                              self.control_percent_savings,
                                                               2000001)
         self.assertEqual(str(context.exception),
                          "Savings goal must be greater than 0 and no greater than 2,000,000 USD.")
@@ -199,7 +208,8 @@ class TestRetirementInit(unittest.TestCase):
         # Case: Goal is 10000000
         # expected: ValueError
         with self.assertRaises(ValueError) as context:
-            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                              self.control_percent_savings,
                                                               10000000)
         self.assertEqual(str(context.exception),
                          "Savings goal must be greater than 0 and no greater than 2,000,000 USD.")
@@ -224,12 +234,14 @@ class TestRetirementInit(unittest.TestCase):
         # Case: String for goal
         # expected: TypeError
         with self.assertRaises(TypeError):
-            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings,
+            self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                              self.control_percent_savings,
                                                               "test")
 
     def test_getters(self):
         """Tests the getters of the RetirementCalculator class"""
-        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary, self.control_percent_savings, self.control_goal)
+        self.retirement_calculator = RetirementCalculator(self.control_age, self.control_salary,
+                                                          self.control_percent_savings, self.control_goal)
 
         # Case: Age
         # expected: 30
