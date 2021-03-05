@@ -1,6 +1,6 @@
 import unittest
-from ..classes.bmi_categories import BodyMassIndexCategory
-from ..classes.bodymassindex import BodyMassIndex
+from src.classes.bmi_categories import BodyMassIndexCategory
+from src.classes.bodymassindex import BodyMassIndex
 
 
 class TestBMICalculations(unittest.TestCase):

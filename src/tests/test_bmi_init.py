@@ -3,8 +3,8 @@
 
 # Tests the BMI functionality of the program using the accessors and modifiers of the BodyMassIndex Python class.
 import unittest
-from ..classes.bmi_categories import BodyMassIndexCategory
-from ..classes.bodymassindex import BodyMassIndex
+from src.classes.bmi_categories import BodyMassIndexCategory
+from src.classes.bodymassindex import BodyMassIndex
 
 
 class TestBMIInit(unittest.TestCase):

@@ -5,7 +5,7 @@
 
 import unittest
 
-from ..classes.retirement import RetirementCalculator
+from src.classes.retirement import RetirementCalculator
 
 
 class TestRetirementCalculation(unittest.TestCase):
