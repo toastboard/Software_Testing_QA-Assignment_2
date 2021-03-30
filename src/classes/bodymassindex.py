@@ -59,7 +59,7 @@ class BodyMassIndex:
         """Calculates the BMI value given the weight and height attributes and sets the bmi_value and bmi_category
         accordingly
         """
-        self.bmi_value = round(self.weight * 0.45 / pow(self.height * .025, 2), 1)
+        self.bmi_value = round(self.weight * 0.2 / pow(self.height * .025, 2), 1)
 
         if self.bmi_value < 18.5:
             self.bmi_category = BodyMassIndexCategory.UNDERWEIGHT
