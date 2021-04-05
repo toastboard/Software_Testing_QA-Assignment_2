@@ -1,0 +1,27 @@
+{% extends "default.html" %}
+{% block title %}Savings Goal{% endblock %}
+{% block content %}
+<h1>Contents</h1>
+<table class="table table-bordered table-striped">
+    <tr>
+        <td>Weight in Pounds</td>
+        <td>{{ dictionary.weight }}</td>
+    </tr>
+    <tr>
+        <td>Height in Inches</td>
+        <td>{{ dictionary.height }}</td>
+    </tr>
+    <tr>
+        <td>BMI Value</td>
+        <td>{{ dictionary.bmi_value }}</td>
+    </tr>
+    <tr>
+        <td>BMI Category</td>
+        <td>{{ dictionary.bmi_category }}</td>
+    </tr>
+</table>
+
+<p>Your BMI Value is {{ dictionary.bmi_value }}. According to this value, your BMI category is "{{ dictionary.bmi_category }}".</p>
+
+<a href=/home ><button class="btn btn-outline-dark" style="height:75px;width:150px">Return Home</button></a>
+{% endblock %}

@@ -1,43 +1,69 @@
 {% extends "default.html" %}
-{% block title %}Savings Goal{% endblock %}
+{% block title %}Savings Goal Form{% endblock %}
 {% block content %}
-<h1>Contents</h1>
-<table class="table table-bordered table-striped">
-    <tr>
-        <td>Age</td>
-        <td>{{ dictionary.age }}</td>
-    </tr>
-    <tr>
-        <td>Salary</td>
-        <td>{{ dictionary.salary }}</td>
-    </tr>
-    <tr>
-        <td>Percent Savings</td>
-        <td>{{ dictionary.percent_savings }}</td>
-    </tr>
-    <tr>
-        <td class=>Savings Goal</td>
-        <td>{{ dictionary.savings_goal }}</td>
-    </tr>
-    <tr>
-        <td class="font-weight-bold">Years to Goal</td>
-        <td>{{ dictionary.years_to_goal }}</td>
-    </tr>
-    <tr>
-        <td class="font-weight-bold">Is Goal Reachable</td>
-        {% if dictionary.is_reachable %}
-            <td>Yes</td>
-        {% else %}
-            <td>No</td>
-        {% endif %}
-    </tr>
-</table>
-{% if dictionary.is_reachable %}
-<p>Your savings goal is reachable! You will be {{ dictionary.age_at_goal }} when you reach your goal.</p>
-{% else %}
-<p>Your savings goal is not reachable. You will be {{ dictionary.age_at_goal }} when you reach your goal.</p>
-{% endif %}
+    <h1>Retirement Savings Goal Calculator</h1>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Enter Information</legend>
+                <div class="form-group">
+                    {{ form.age.label(class="form-control-label") }}
 
-
-<a href=home ><button class="btn btn-secondary" style="height:75px;width:150px">Return Home</button></a>
+                    {% if form.age.errors %}
+                        {{ form.age(class="form-control form-control-lg") }}
+                        <div class="text-danger">
+                            {% for error in form.age.errors %}
+                                <span>{{ error }}</span><br>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.age(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.salary.label(class="form-control-label") }}
+                    {% if form.salary.errors %}
+                        {{ form.salary(class="form-control form-control-lg") }}
+                        <div class="text-danger">
+                            {% for error in form.salary.errors %}
+                                <span>{{ error }}</span><br>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.salary(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.percent_savings.label(class="form-control-label") }}
+                    {% if form.percent_savings.errors %}
+                        {{ form.percent_savings(class="form-control form-control-lg") }}
+                        <div class="text-danger">
+                            {% for error in form.percent_savings.errors %}
+                                <span>{{ error }}</span><br>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.percent_savings(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.savings_goal.label(class="form-control-label") }}
+                    {% if form.savings_goal.errors %}
+                        {{ form.savings_goal(class="form-control form-control-lg") }}
+                        <div class="text-danger">
+                            {% for error in form.savings_goal.errors %}
+                                <span>{{ error }}</span><br>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.savings_goal(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-dark") }}
+            </div>
+        </form>
+    </div>
 {% endblock %}
