@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, request, session, flash
-from classes.retirement import RetirementCalculator
-from classes.bodymassindex import BodyMassIndex, BodyMassIndexCategory
-from forms import RetirementCalculatorForm, BMICalculatorForm
+from .classes.retirement import RetirementCalculator
+from .classes.bodymassindex import BodyMassIndex, BodyMassIndexCategory
+from .forms import RetirementCalculatorForm, BMICalculatorForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '9a87056aee5b4c148bc40c5cef020da1'
