@@ -1,1 +1,1 @@
-web waitress-serve --listen=*:8000 src.app:app
+web waitress-serve --port=$PORT src.app:app
