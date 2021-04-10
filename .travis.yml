@@ -2,9 +2,6 @@ language: python
 python:
 - '3.8'
 env:
-  matrix:
-  - GITHUB_TOKEN =
-  global:
     secure: H96eFTQaYBVc+RuqWfFPPxH24WJAt7ITgV1y5lX7WZG+Zpx91DlIkKTT6f6QmJ/Tn8/l6o5olkqCFXhgbLxYlC2YwSTCGL7SOz5yj3YJjW8v9gozPG4CwybW7i0tbE5ZG/6Z27rIsI3s1qcBXChlqosCJcpM0WUnbzkm+t3zD4kNbB/v09bOEwjd/jlFzMnH9WX/UZtTG2n4Mjg+Nz/TRLqjNL0ZwIgYSZyKJbM3MtVRezeW9NJ7w1DTKrNkKTNNNcoZBIdNHQpWN2zFj8jeKxgMlkgr7nOFQcjFzd7SPedu5ctthfMkzHpmp0XBP5Qp1IXBiN2RxYpEghxD0rQ/H7MeHjwa7SoATITj6M27/LpCcpXWfjQpdiieUPMnPsX43vkDgvl1EKfLzJMfqYNkkOSiktAY4TS2zM7Peocgc6yOEmNtEtI3mLGL/oVCJwuGhpCeo1TC3kSupJfKGrdOjozPGwg8SLGtNjJcb6fYQm4HH4XRR5ycBufz/N7fqQGoKLO1YV6Kp5wryNYeZjeP6yTPHJBfis04SA+sOY4aQZc+C/4LDJMyXvkK3Ts8vj6xm4Wqi1kzUiYNDPvIeb2kTW8DU5UlygN6/NayxuqeAqG/IoWnXfbtpBsJz9xgvevkG+KV+oMUtTS1LyXyly2Gag/IA7FlToe5xhfk2RjiK/g=
 install:
 - pip install -r requirements.txt
