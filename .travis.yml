@@ -1,4 +1,6 @@
 language: python
+env:
+  - TOXENV=py38
 python:
   - '3.8'
 install:
