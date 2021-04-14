@@ -10,7 +10,8 @@ from src.classes.retirement import RetirementCalculator
 
 class TestRetirementInit(unittest.TestCase):
     def setUp(self):
-        """Setup function that will apply to all other functions in the class."""
+        """Setup function that will apply to all other functions in the
+        class. """
         # Age that must be valid
         self.control_age = 30
         # Salary that must be valid
@@ -21,7 +22,8 @@ class TestRetirementInit(unittest.TestCase):
         self.control_goal = 700000
 
     def test_retirement_age_init(self):
-        """Tests initializing the RetirementCalculator object at varying ages."""
+        """Tests initializing the RetirementCalculator object at varying
+        ages. """
         # Case: Age is -500
         # expected: ValueError
         with self.assertRaises(ValueError) as context:
@@ -30,7 +32,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Age must be no less than 0 and no greater than 99 years.")
+                         "Age must be no less than 0 and no greater than 99 "
+                         "years.")
 
         # Case: Age is -1
         # expected: ValueError
@@ -40,7 +43,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Age must be no less than 0 and no greater than 99 years.")
+                         "Age must be no less than 0 and no greater than 99 "
+                         "years.")
 
         # Case: Age is 0 (boundary)
         # expected: pass
@@ -71,7 +75,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Age must be no less than 0 and no greater than 99 years.")
+                         "Age must be no less than 0 and no greater than 99 "
+                         "years.")
 
         # Case: Age is 500
         # expected: ValueError
@@ -81,10 +86,12 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Age must be no less than 0 and no greater than 99 years.")
+                         "Age must be no less than 0 and no greater than 99 "
+                         "years.")
 
     def test_retirement_salary(self):
-        """Tests initializing the RetirementCalculator object at varying salaries"""
+        """Tests initializing the RetirementCalculator object at varying
+        salaries """
         # Case: Salary is -500
         # expected: ValueError
         with self.assertRaises(ValueError) as context:
@@ -93,7 +100,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Salary must be greater than 0 and no greater than 500,000 USD.")
+                         "Salary must be greater than 0 and no greater than "
+                         "500,000 USD.")
 
         # Case: Salary is 0
         # expected: ValueError
@@ -103,7 +111,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Salary must be greater than 0 and no greater than 500,000 USD.")
+                         "Salary must be greater than 0 and no greater than "
+                         "500,000 USD.")
 
         # Case: Salary is 1 (boundary)
         # expected: pass
@@ -133,7 +142,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Salary must be greater than 0 and no greater than 500,000 USD.")
+                         "Salary must be greater than 0 and no greater than "
+                         "500,000 USD.")
 
         # Case: Salary is 1000000
         # expected: ValueError
@@ -143,10 +153,12 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Salary must be greater than 0 and no greater than 500,000 USD.")
+                         "Salary must be greater than 0 and no greater than "
+                         "500,000 USD.")
 
     def test_retirement_percent_savings(self):
-        """Tests initializing the RetirementCalculator object at varying percent saved per year"""
+        """Tests initializing the RetirementCalculator object at varying
+        percent saved per year """
         # Case: Savings per year is -10
         # expected: ValueError
         with self.assertRaises(ValueError) as context:
@@ -155,7 +167,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               -10,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Savings per year must be greater than 0 and less than 1.")
+                         "Savings per year must be greater than 0 and less "
+                         "than 1.")
 
         # Case: Savings per year is 0
         # expected: ValueError
@@ -165,7 +178,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               0,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Savings per year must be greater than 0 and less than 1.")
+                         "Savings per year must be greater than 0 and less "
+                         "than 1.")
 
         # Case: Savings per year is 0.01
         # expected: pass
@@ -196,7 +210,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               1,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Savings per year must be greater than 0 and less than 1.")
+                         "Savings per year must be greater than 0 and less "
+                         "than 1.")
 
         # Case: Savings per year is 10
         # expected: ValueError
@@ -206,10 +221,12 @@ class TestRetirementInit(unittest.TestCase):
                                                               10,
                                                               self.control_goal)
         self.assertEqual(str(context.exception),
-                         "Savings per year must be greater than 0 and less than 1.")
+                         "Savings per year must be greater than 0 and less "
+                         "than 1.")
 
     def test_retirement_goal(self):
-        """Tests initializing the RetirementCalculator object at varying goals"""
+        """Tests initializing the RetirementCalculator object at varying
+        goals """
         # Case: Goal is -1000
         # expected: ValueError
         with self.assertRaises(ValueError) as context:
@@ -218,7 +235,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               -1000)
         self.assertEqual(str(context.exception),
-                         "Savings goal must be greater than 0 and no greater than 2,000,000 USD.")
+                         "Savings goal must be greater than 0 and no greater "
+                         "than 2,000,000 USD.")
 
         # Case: Goal is 0
         # expected: ValueError
@@ -228,7 +246,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               0)
         self.assertEqual(str(context.exception),
-                         "Savings goal must be greater than 0 and no greater than 2,000,000 USD.")
+                         "Savings goal must be greater than 0 and no greater "
+                         "than 2,000,000 USD.")
 
         # Case: Goal is 1 (boundary)
         # expected: pass
@@ -259,7 +278,8 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               2000001)
         self.assertEqual(str(context.exception),
-                         "Savings goal must be greater than 0 and no greater than 2,000,000 USD.")
+                         "Savings goal must be greater than 0 and no greater "
+                         "than 2,000,000 USD.")
 
         # Case: Goal is 10000000
         # expected: ValueError
@@ -269,10 +289,12 @@ class TestRetirementInit(unittest.TestCase):
                                                               self.control_percent_savings,
                                                               10000000)
         self.assertEqual(str(context.exception),
-                         "Savings goal must be greater than 0 and no greater than 2,000,000 USD.")
+                         "Savings goal must be greater than 0 and no greater "
+                         "than 2,000,000 USD.")
 
     def test_diff_types(self):
-        """Tests initializing the Retirement Calculator object with erroneous types passed in."""
+        """Tests initializing the Retirement Calculator object with
+        erroneous types passed in. """
         # Case: String for age
         # expected: TypeError
         with self.assertRaises(TypeError):
