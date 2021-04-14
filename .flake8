@@ -1,0 +1,5 @@
+[flake8]
+per-file-ignores =
+    src\forms.py:E501
+    src\tests\test_retirement_calculation.py:E501
+    src\tests\test_retirement_init.py:E501

@@ -1,0 +1,49 @@
+{% extends "default.html" %}
+{% block title %}Savings Goal{% endblock %}
+{% block content %}
+<h1>Contents</h1>
+<table class="table table-bordered table-striped">
+    <tr>
+        <td>Age</td>
+        <td>{{ dictionary.age }}</td>
+    </tr>
+    <tr>
+        <td>Salary</td>
+        <td>{{ dictionary.salary }}</td>
+    </tr>
+    <tr>
+        <td>Percent Savings</td>
+        <td>{{ dictionary.percent_savings }}</td>
+    </tr>
+    <tr>
+        <td>Savings Goal</td>
+        <td>{{ dictionary.savings_goal }}</td>
+    </tr>
+    <tr>
+        <td class="font-weight-bold">Years to Goal</td>
+        <td>{{ dictionary.years_to_goal }}</td>
+    </tr>
+    <tr>
+        <td class="font-weight-bold">Is Goal Reachable</td>
+        {% if dictionary.is_reachable %}
+        <td>Yes</td>
+        {% else %}
+        <td>No</td>
+        {% endif %}
+    </tr>
+</table>
+{% if dictionary.is_reachable %}
+<p>Your savings goal is reachable! You will be {{ dictionary.age_at_goal }}
+    when
+    you reach your goal.</p>
+{% else %}
+<p>Your savings goal is not reachable. You will be {{ dictionary.age_at_goal }}
+    when you reach your goal.</p>
+{% endif %}
+
+<a href=/home>
+    <button class="btn btn-outline-dark" style="height:75px;width:150px">Return
+        Home
+    </button>
+</a>
+{% endblock %}
