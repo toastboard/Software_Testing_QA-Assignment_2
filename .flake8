@@ -1,0 +1,5 @@
+[flake8]
+per-file-ignores =
+    src\forms.py:E501
+exclude =
+    tests
