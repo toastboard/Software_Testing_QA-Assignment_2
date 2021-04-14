@@ -59,50 +59,70 @@ class TestBMICalculations(unittest.TestCase):
         """Tests the obese values case"""
         self.bmi_object = BodyMassIndex(self.obese_weight, self.control_height)
 
-        self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.obese_value)
-        self.assertEqual(self.bmi_object.get_bmi_category(), self.obese_category)
+        self.assertAlmostEqual(self.bmi_object.get_bmi_value(),
+                               self.obese_value)
+        self.assertEqual(self.bmi_object.get_bmi_category(),
+                         self.obese_category)
 
     def test_bmi_overweight_obese_edge(self):
         """Tests the overweight-obese value edge case"""
-        self.bmi_object = BodyMassIndex(self.overweight_obese_weight, self.control_height)
+        self.bmi_object = BodyMassIndex(self.overweight_obese_weight,
+                                        self.control_height)
 
-        self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.overweight_obese_value)
-        self.assertEqual(self.bmi_object.get_bmi_category(), self.overweight_obese_category)
+        self.assertAlmostEqual(self.bmi_object.get_bmi_value(),
+                               self.overweight_obese_value)
+        self.assertEqual(self.bmi_object.get_bmi_category(),
+                         self.overweight_obese_category)
 
     def test_bmi_overweight(self):
         """Tests the overweight values case"""
-        self.bmi_object = BodyMassIndex(self.overweight_weight, self.control_height)
+        self.bmi_object = BodyMassIndex(self.overweight_weight,
+                                        self.control_height)
 
-        self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.overweight_value)
-        self.assertEqual(self.bmi_object.get_bmi_category(), self.overweight_category)
+        self.assertAlmostEqual(self.bmi_object.get_bmi_value(),
+                               self.overweight_value)
+        self.assertEqual(self.bmi_object.get_bmi_category(),
+                         self.overweight_category)
 
     def test_bmi_normal_overweight_edge(self):
         """Tests the normal-overweight value edge case"""
-        self.bmi_object = BodyMassIndex(self.normal_overweight_weight, self.control_height)
+        self.bmi_object = BodyMassIndex(self.normal_overweight_weight,
+                                        self.control_height)
 
-        self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.normal_overweight_value)
-        self.assertEqual(self.bmi_object.get_bmi_category(), self.normal_overweight_category)
+        self.assertAlmostEqual(self.bmi_object.get_bmi_value(),
+                               self.normal_overweight_value)
+        self.assertEqual(self.bmi_object.get_bmi_category(),
+                         self.normal_overweight_category)
 
     def test_bmi_normal(self):
         """Tests the normal values case"""
-        self.bmi_object = BodyMassIndex(self.normal_weight, self.control_height)
+        self.bmi_object = BodyMassIndex(self.normal_weight,
+                                        self.control_height)
 
-        self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.normal_value)
-        self.assertEqual(self.bmi_object.get_bmi_category(), self.normal_category)
+        self.assertAlmostEqual(self.bmi_object.get_bmi_value(),
+                               self.normal_value)
+        self.assertEqual(self.bmi_object.get_bmi_category(),
+                         self.normal_category)
 
     def test_bmi_underweight_normal_edge(self):
         """Tests the underweight-normal value edge case"""
-        self.bmi_object = BodyMassIndex(self.underweight_normal_weight, self.control_height)
+        self.bmi_object = BodyMassIndex(self.underweight_normal_weight,
+                                        self.control_height)
 
-        self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.underweight_normal_value)
-        self.assertEqual(self.bmi_object.get_bmi_category(), self.underweight_normal_category)
+        self.assertAlmostEqual(self.bmi_object.get_bmi_value(),
+                               self.underweight_normal_value)
+        self.assertEqual(self.bmi_object.get_bmi_category(),
+                         self.underweight_normal_category)
 
     def test_bmi_underweight(self):
         """Tests the underweight values case"""
-        self.bmi_object = BodyMassIndex(self.underweight_weight, self.control_height)
+        self.bmi_object = BodyMassIndex(self.underweight_weight,
+                                        self.control_height)
 
-        self.assertAlmostEqual(self.bmi_object.get_bmi_value(), self.underweight_value)
-        self.assertEqual(self.bmi_object.get_bmi_category(), self.underweight_category)
+        self.assertAlmostEqual(self.bmi_object.get_bmi_value(),
+                               self.underweight_value)
+        self.assertEqual(self.bmi_object.get_bmi_category(),
+                         self.underweight_category)
 
 
 if __name__ == '__main__':

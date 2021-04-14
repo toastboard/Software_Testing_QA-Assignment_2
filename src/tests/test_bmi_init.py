@@ -59,7 +59,8 @@ class TestBMIInit(unittest.TestCase):
 
         # Case: Valid Weight
         # expected: Pass
-        self.bmi_object = BodyMassIndex(self.control_bmi_weight, self.control_bmi_height)
+        self.bmi_object = BodyMassIndex(self.control_bmi_weight,
+                                        self.control_bmi_height)
 
     def test_bmi_init_height(self):
         """Tests initializing a BodyMassIndex object with varying heights."""
@@ -93,7 +94,8 @@ class TestBMIInit(unittest.TestCase):
 
         # Case: Valid Weight
         # expected: Pass
-        self.bmi_object = BodyMassIndex(self.control_bmi_weight, self.control_bmi_height)
+        self.bmi_object = BodyMassIndex(self.control_bmi_weight,
+                                        self.control_bmi_height)
 
     def test_bmi_init_validity(self):
         """Tests to ensure that a BodyMassIndex object initiated with control variables passed as arguments match up
@@ -101,16 +103,21 @@ class TestBMIInit(unittest.TestCase):
         """
         # Case: Initialize object, compare to control case.
         # expected: pass
-        self.bmi_object = BodyMassIndex(self.control_bmi_weight, self.control_bmi_height)
+        self.bmi_object = BodyMassIndex(self.control_bmi_weight,
+                                        self.control_bmi_height)
 
         self.assertEqual(self.bmi_object, self.control_bmi_object)
 
     def test_bmi_accessors(self):
         """Tests the accessors provided by the BodyMassIndex class."""
-        self.assertEqual(self.control_bmi_height, self.control_bmi_object.get_height())
-        self.assertEqual(self.control_bmi_weight, self.control_bmi_object.get_weight())
-        self.assertAlmostEqual(self.control_bmi_value, self.control_bmi_object.get_bmi_value())
-        self.assertEqual(self.control_bmi_category, self.control_bmi_object.get_bmi_category())
+        self.assertEqual(self.control_bmi_height,
+                         self.control_bmi_object.get_height())
+        self.assertEqual(self.control_bmi_weight,
+                         self.control_bmi_object.get_weight())
+        self.assertAlmostEqual(self.control_bmi_value,
+                               self.control_bmi_object.get_bmi_value())
+        self.assertEqual(self.control_bmi_category,
+                         self.control_bmi_object.get_bmi_category())
 
 
 if __name__ == '__main__':

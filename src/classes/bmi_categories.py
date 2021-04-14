@@ -1,8 +1,8 @@
 # CJ Nguyen
 # 2/23/2021
 
-# Enumerated list of different BMI categories.
-# Source for BMI categories: https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html
+# Enumerated list of different BMI categories. Source for BMI categories:
+# https://www.cdc.gov/healthyweight/assessing/bmi/adult_bmi/index.html
 from enum import Enum, auto
 
 

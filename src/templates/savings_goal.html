@@ -26,17 +26,24 @@
     <tr>
         <td class="font-weight-bold">Is Goal Reachable</td>
         {% if dictionary.is_reachable %}
-            <td>Yes</td>
+        <td>Yes</td>
         {% else %}
-            <td>No</td>
+        <td>No</td>
         {% endif %}
     </tr>
 </table>
 {% if dictionary.is_reachable %}
-<p>Your savings goal is reachable! You will be {{ dictionary.age_at_goal }} when you reach your goal.</p>
+<p>Your savings goal is reachable! You will be {{ dictionary.age_at_goal }}
+    when
+    you reach your goal.</p>
 {% else %}
-<p>Your savings goal is not reachable. You will be {{ dictionary.age_at_goal }} when you reach your goal.</p>
+<p>Your savings goal is not reachable. You will be {{ dictionary.age_at_goal }}
+    when you reach your goal.</p>
 {% endif %}
 
-<a href=/home ><button class="btn btn-outline-dark" style="height:75px;width:150px">Return Home</button></a>
+<a href=/home>
+    <button class="btn btn-outline-dark" style="height:75px;width:150px">Return
+        Home
+    </button>
+</a>
 {% endblock %}
