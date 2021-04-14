@@ -2,3 +2,5 @@ Flask==1.1.2
 Flask-WTF==0.14.3
 waitress==2.0.0
 flake8==3.9.0
+coverage==5.5
+coveralls==3.0.1
