@@ -1,0 +1,5 @@
+[run]
+omit =
+    src/app.py
+    src/main.py
+    src/forms.py
